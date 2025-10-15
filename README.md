@@ -1,1 +1,1 @@
-# Csci40
+# McKay Seamons

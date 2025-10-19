@@ -48,10 +48,7 @@ int main() {
 		}
 	}
 	//just testing to make sure we can open and see the file and it being read into briefcases vectr
-	cout << "Briefcase amounts read:\n";
-	for (int amount : briefCases) {
-		cout << amount << endl;
-	}
+	
 
 	// Initialize Variables
 	int totalCaseValue = 0;

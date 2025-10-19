@@ -53,10 +53,13 @@ int main() {
 		cout << amount << endl;
 	}
 
+	// Initialize Variables
 	int totalCaseValue = 0;
 	int totalOpenValue = 0;
 	int totalRemainValue = 0;
 	int averageRemain = 0;
+
+	// Calculates the combined value of every briefcase.
 	for (int i = 0; i < briefCases.size(); i++) {
 		totalCaseValue += briefCases[i];
 	}
@@ -70,7 +73,7 @@ int main() {
 		}
 
 		if (openedCase == -1) {
-			cout << "You won " << averageRemain << " dollars!\n";
+			cout << "You won " << averageRemain << " dollars!\n"; // Outputs players winnings if they decide to take the deal.
 			break;
 		}
 
@@ -89,14 +92,17 @@ int main() {
 
 		//How do you average values across a vector?
 
+		// Calculates the average value of the remaining briefcases.
 		totalOpenValue += briefCases[openedCase];
 		totalRemainValue = (totalCaseValue - totalOpenValue);
 		averageRemain = (totalRemainValue / casesRemaining);
 
+		// Player receives offers as long as their is more than 1 briefcase remaining.
 		if (casesRemaining > 1)
 			cout << "I will offer you " << averageRemain << " dollars to walk away." << endl;
 
+		// If only 1 case remains the game ends and the player receives whatever was in the last case.
 		if (casesRemaining == 1)
-			cout << "You won " << briefCases[openedCase] << " dollars!\n";
+			cout << "You won " << totalRemainValue << " dollars!\n";
 	}
 }

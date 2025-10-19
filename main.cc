@@ -53,14 +53,24 @@ int main() {
 		cout << amount << endl;
 	}
 
+	int totalCaseValue = 0;
+	int totalOpenValue = 0;
+	int totalRemainValue = 0;
+	int averageRemain = 0;
+	for (int i = 0; i < briefCases.size(); i++) {
+		totalCaseValue += briefCases[i];
+	}
+
 	while (casesRemaining > 1) {
 		int openedCase;
+
 		cout << "Please enter a briefcase to open:\n";
 		if (!(cin >> openedCase)) {
 			die();
 		}
 
 		if (openedCase == -1) {
+			cout << "You won " << averageRemain << " dollars!\n";
 			break;
 		}
 
@@ -76,7 +86,17 @@ int main() {
 
 		isOpened[openedCase] = true;
 		casesRemaining--;
-	}
 
-	//How do you average values across a vector?
+		//How do you average values across a vector?
+
+		totalOpenValue += briefCases[openedCase];
+		totalRemainValue = (totalCaseValue - totalOpenValue);
+		averageRemain = (totalRemainValue / casesRemaining);
+
+		if (casesRemaining > 1)
+			cout << "I will offer you " << averageRemain << " dollars to walk away." << endl;
+
+		if (casesRemaining == 1)
+			cout << "You won " << briefCases[openedCase] << " dollars!\n";
+	}
 }

@@ -19,8 +19,7 @@ int main() {
 	ifstream inputFile(filename);
 	//How to check to see if the file opened successfully?
 	if (!inputFile.is_open()) {
-		cout << "File didn't open sucessfully" << endl;
-		return 1;
+		die();
 	}
 	int N;
 	if (!(inputFile >> N)) {

@@ -47,7 +47,7 @@ int main() {
 		}
 	}
 	//just testing to make sure we can open and see the file and it being read into briefcases vectr
-	
+
 
 	// Initialize Variables
 	int totalCaseValue = 0;
@@ -69,8 +69,13 @@ int main() {
 		}
 
 		if (openedCase == -1) {
-			cout << "You won " << averageRemain << " dollars!\n"; // Outputs players winnings if they decide to take the deal.
-			break;
+			if (averageRemain == 0) {
+				cout << "You won " << totalCaseValue / briefCases.size() << " dollars!\n";
+				break;
+			} else {
+				cout << "You won " << averageRemain << " dollars!\n"; // Outputs players winnings if they decide to take the deal.
+				break;
+			}
 		}
 
 		if (openedCase < 0 || openedCase >= N) {

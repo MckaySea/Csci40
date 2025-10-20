@@ -47,7 +47,7 @@ int main() {
 		}
 	}
 	//just testing to make sure we can open and see the file and it being read into briefcases vectr
-	
+
 
 	// Initialize Variables
 	int totalCaseValue = 0;
@@ -93,7 +93,7 @@ int main() {
 		totalRemainValue = (totalCaseValue - totalOpenValue);
 		averageRemain = (totalRemainValue / casesRemaining);
 
-		// Player receives offers as long as their is more than 1 briefcase remaining.
+		// Player receives offers as long as there is more than 1 briefcase remaining.
 		if (casesRemaining > 1)
 			cout << "I will offer you " << averageRemain << " dollars to walk away." << endl;
 
